@@ -1,0 +1,56 @@
+body {
+    background: rgb(200, 200, 200);
+    font-family: "Arial";
+}
+
+/* Main styling for the page */
+.ux-main {
+    border: solid;
+}
+.ux-col-left {
+    width: 3in
+}
+
+/* Text styling */
+:root {
+    --titleMainColor: rgb(182, 110, 21);
+    --titleMainSize: x-large;
+
+    --titleSize: larger;
+    --titleDateColor: rgb(27, 61, 132);
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+.tx-title-name {
+    color: var(--titleMainColor);
+    font-size: var(--titleMainSize);
+    font-weight: bold;
+}
+.tx-title-main {
+    font-size: var(--titleMainSize);
+}
+.tx-title1 {
+    color: var(--titleMainColor);
+    font-size: var(--titleSize);
+}
+.tx-title-date {
+    color: var(--titleDateColor);
+    font-size: var(--titleSize);
+}
+.tx-content-sub-title {
+    font-weight: bold;
+}
+.tx-content {
+
+}
+
+/* Styling for the printed version */
+@media print {
+    @page {
+        size: 8.5in 11in;
+        margin: 0.5in;
+    }
+}
