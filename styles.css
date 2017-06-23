@@ -1,6 +1,7 @@
 body {
     background: rgb(200, 200, 200);
     font-family: "Arial";
+    vertical-align: text-top;
 }
 
 /* Main styling for the page */
@@ -32,7 +33,7 @@ p {
 .tx-title-main {
     font-size: var(--titleMainSize);
 }
-.tx-title1 {
+.tx-title-topic {
     color: var(--titleMainColor);
     font-size: var(--titleSize);
 }
@@ -45,6 +46,9 @@ p {
 }
 .tx-content {
 
+}
+.tx-content-location {
+    font-style: italic;
 }
 
 /* Styling for the printed version */
