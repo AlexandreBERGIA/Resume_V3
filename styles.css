@@ -6,10 +6,6 @@ body {
 }
 
 /* Main styling for the page */
-.div--size-page {
-    width: 100%;
-    padding: 0px;
-}
 .div--column-left {
     text-align: right;
     float: left;
@@ -34,6 +30,10 @@ body {
 }
 .div--line-three {
     height:700px;
+}
+.div--line-four {
+    height:40px;
+    padding: 10px;
 }
 
 /* Text styling */
@@ -68,6 +68,9 @@ h4 {
     white-space: normal;
     padding-right: 10%;
 }
+.text--align-center {
+    text-align: center;
+}
 
 
 .text--highlight-high {
@@ -85,6 +88,14 @@ h4 {
     border: 5px solid #ffffff;
     max-height: 100px;
     margin-right: 10px;
+    float: left;
+}
+.img--size-qr {
+    margin-top: 20px;
+    max-height: 100px;
+}
+.img--size-connectIcon {
+    max-height: 15px;
     float: left;
 }
 
@@ -120,5 +131,8 @@ h4 {
     @page {
         size: 8.5in 11in;
         margin: 0.5in;
+    }
+    body {
+        font-size: smaller;
     }
 }
