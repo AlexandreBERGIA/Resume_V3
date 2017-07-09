@@ -1,20 +1,35 @@
 body {
-    background: #ffffff;
+    background: #000;
     font-family: "Arial";
-    vertical-align: text-top;
-    font-size: small;
+    font-size: 80%;
 }
 
 /* Main styling for the page */
+.section--display-block {
+    display: block;
+}
+.div--main-page {
+    max-width: 800px;
+    background: #f3f3f3;
+    margin: 20px auto;
+}
+.div-style-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+}
+.div-style-footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+}
 .div--column-left {
     text-align: right;
     float: left;
-    height: 100%;
-    width:25%;
+    width:26%;
     padding: 1%;
 }
 .div--column-right {
-    height: 100%;
     float: left;
     width: 70%;
     padding: 1%;
@@ -22,18 +37,8 @@ body {
 .div--align-noWrap {
     white-space: nowrap;
 }
-.div--line-one {
-    height:60px;
-}
-.div--line-two {
-    height:110px;
-}
-.div--line-three {
-    height:700px;
-}
-.div--line-four {
-    height:40px;
-    padding: 10px;
+.div--line-force {
+    clear: both;
 }
 
 /* Text styling */
@@ -59,14 +64,13 @@ h4 {
 .text--color-blue {
     color: rgb(27, 61, 132);
 }
-
 .text--display-oneLine {
     display: block;
 }
 .text--align-profile {
     display: inline-block;
     white-space: normal;
-    padding-right: 10%;
+    padding-right: 20%;
 }
 .text--align-center {
     text-align: center;
@@ -85,7 +89,7 @@ h4 {
 
 /* Images */
 .img--size-profile {
-    border: 5px solid #ffffff;
+    border: 5px solid #f3f3f3;
     max-height: 100px;
     margin-right: 10px;
     float: left;
@@ -101,24 +105,24 @@ h4 {
 
 /* Coloring */
 .page--gradient-blueRight {
-    background: #ffffff;
-    background: -moz-linear-gradient(left, #ffffff 0%, #4978bd 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(100%, #4978bd));
-    background: -webkit-linear-gradient(left, #ffffff 0%, #4978bd 100%);
-    background: -o-linear-gradient(left, #ffffff 0%, #4978bd 100%);
-    background: -ms-linear-gradient(left, #ffffff 0%, #4978bd 100%);
-    background: linear-gradient(to right, #ffffff 0%, #4978bd 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#4978bd', GradientType=1);
+    background: #f3f3f3;
+    background: -moz-linear-gradient(left, #f3f3f3 0%, #4978bd 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #f3f3f3), color-stop(100%, #4978bd));
+    background: -webkit-linear-gradient(left, #f3f3f3 0%, #4978bd 100%);
+    background: -o-linear-gradient(left, #f3f3f3 0%, #4978bd 100%);
+    background: -ms-linear-gradient(left, #f3f3f3 0%, #4978bd 100%);
+    background: linear-gradient(to right, #f3f3f3 0%, #4978bd 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f3f3', endColorstr='#4978bd', GradientType=1);
 }
 .page--gradient-blueLeft {
     background: #4978bd;
-    background: -moz-linear-gradient(left, #4978bd 0%, #ffffff 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #4978bd), color-stop(100%, #ffffff));
-    background: -webkit-linear-gradient(left, #4978bd 0%, #ffffff 100%);
-    background: -o-linear-gradient(left, #4978bd 0%, #ffffff 100%);
-    background: -ms-linear-gradient(left, #4978bd 0%, #ffffff 100%);
-    background: linear-gradient(to right, #4978bd 0%, #ffffff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4977bd', endColorstr='#ffffff', GradientType=1 );
+    background: -moz-linear-gradient(left, #4978bd 0%, #f3f3f3 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #4978bd), color-stop(100%, #f3f3f3));
+    background: -webkit-linear-gradient(left, #4978bd 0%, #f3f3f3 100%);
+    background: -o-linear-gradient(left, #4978bd 0%, #f3f3f3 100%);
+    background: -ms-linear-gradient(left, #4978bd 0%, #f3f3f3 100%);
+    background: linear-gradient(to right, #4978bd 0%, #f3f3f3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4977bd', endColorstr='#f3f3f3', GradientType=1 );
 }
 .page--background-blue {
     background: #4978bd;
