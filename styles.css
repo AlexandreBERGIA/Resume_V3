@@ -4,9 +4,6 @@ body {
 }
 
 /* Main styling for the page */
-.section--display-block {
-    display: block;
-}
 .div--main-page {
     max-width: 800px;
     background: #f3f3f3;
@@ -18,13 +15,11 @@ body {
     padding-left: 50px;
 }
 .div--style-contact {
-    text-align: left;
     float: right;
     width:26%;
     padding: 1%;
 }
 .div--style-profile {
-    text-align: right;
     float: left;
     width: 70%;
     padding: 1%;
@@ -35,13 +30,11 @@ body {
     padding-left: 30px;
 }
 .div--column-one {
-    text-align: left;
     float: left;
     width: 70%;
     padding: 1%;
 }
 .div--column-two {
-    text-align: left;
     float: right;
     width:26%;
     padding: 1%;
@@ -53,6 +46,7 @@ body {
     clear: both;
 }
 
+
 /* Text styling */
 p {
     margin: 0px;
@@ -62,16 +56,16 @@ p {
 h1 {
     margin: 0px;
 }
+h2 {
+    margin: 0px;
+}
 h3 {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 0px;
 }
 h4 {
     margin-top: 6px;
     margin-bottom: 0px;
-}
-.text--style-name {
-    color: #ff794d;
 }
 .text--style-title {
     color: #ff794d;
@@ -85,7 +79,7 @@ h4 {
 .text--align-profile {
     display: inline-block;
     white-space: normal;
-    padding-right: 20%;
+    padding-right: 85px;
 }
 .text--align-center {
     text-align: center;
@@ -149,7 +143,7 @@ a, a:visited, a:hover, a:active {
 }
 
 /* Styling for the mobile version */
-@media all and (max-width: 601px) {
+@media screen and (max-width: 601px) {
     body {
         background: #000;
         font-family: "Arial";
@@ -168,7 +162,6 @@ a, a:visited, a:hover, a:active {
     .div--column-two, .div--column-one {
         float: none;
         width: auto;
-        text-align: left;
     }
     .div--content-contact, .div--content-profile {
         text-align: center;
@@ -179,10 +172,6 @@ a, a:visited, a:hover, a:active {
     .div-style-header, .div-style-footer {
         padding: 15px;
         text-align: center;
-    }
-
-    .div--date-content {
-        padding-left: 10px;
     }
 
     /*Update the titles and dates*/
@@ -221,11 +210,17 @@ a, a:visited, a:hover, a:active {
 
 /* Styling for the printed version */
 @media print {
-    @page {
-        size: 8.5in 11in;
-        margin: 0.5in;
-    }
     body {
-        font-size: smaller;
+        font-size: 80%;
+        background: #fff;
+    }
+
+    .div--main-page {
+        margin: 0px;
+        background: #fff;
+    }
+
+    .div-style-footer {
+        display: none;
     }
 }
