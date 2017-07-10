@@ -1,7 +1,6 @@
 body {
     background: #000;
     font-family: "Arial";
-    font-size: 80%;
 }
 
 /* Main styling for the page */
@@ -18,21 +17,33 @@ body {
     padding-bottom: 15px;
     padding-left: 50px;
 }
-.div-style-footer {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-}
-.div--column-two {
+.div--style-contact {
     text-align: left;
     float: right;
     width:26%;
     padding: 1%;
 }
-.div--column-one {
+.div--style-profile {
     text-align: right;
     float: left;
     width: 70%;
+    padding: 1%;
+}
+.div-style-footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+}
+.div--column-one {
+    text-align: left;
+    float: left;
+    width: 70%;
+    padding: 1%;
+}
+.div--column-two {
+    text-align: left;
+    float: right;
+    width:26%;
     padding: 1%;
 }
 .div--align-noWrap {
@@ -59,10 +70,13 @@ h4 {
     margin-top: 6px;
     margin-bottom: 0px;
 }
-.text--color-orange {
+.text--style-name {
     color: #ff794d;
 }
-.text--color-blue {
+.text--style-title {
+    color: #ff794d;
+}
+.text--style-date {
     color: rgb(27, 61, 132);
 }
 .text--display-oneLine {
@@ -101,6 +115,7 @@ h4 {
 }
 .img--size-connectIcon {
     max-height: 15px;
+    margin-right: 5px;
     float: left;
 }
 
@@ -129,9 +144,23 @@ h4 {
     background: #4978bd;
 }
 
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
 
 /* Styling for the mobile version */
 @media all and (max-width: 601px) {
+    body {
+        background: #000;
+        font-family: "Arial";
+    }
+
+    /*Remove the gradients*/
+    .page--gradient-blueRight, .page--gradient-blueLeft {
+        background: #f3f3f3;
+    }
+
+    /*Update the main page layout*/
     .div--main-page {
         margin: 10px auto;
         min-width: 280px;
@@ -139,10 +168,53 @@ h4 {
     .div--column-two, .div--column-one {
         float: none;
         width: auto;
+        text-align: left;
+    }
+    .div--content-contact, .div--content-profile {
+        text-align: center;
+    }
+    .div--content-profile {
+        background: #4978bd;
+    }
+    .div-style-header, .div-style-footer {
+        padding: 15px;
+        text-align: center;
     }
 
-    .img--size-profile {
+    .div--date-content {
+        padding-left: 10px;
+    }
+
+    /*Update the titles and dates*/
+    .text--style-name {
+        font-size: 250%;
+    }
+    .text--style-title {
+        text-align: center;
+        font-size: 200%;
+        margin-top: 20px;
+    }
+    .text--style-date {
+        font-size: 130%;
+    }
+
+    /*Update the profile*/
+    .text--align-profile {
+        display: block;
+        white-space: normal;
+        padding: 20px;
+    }
+    .img--size-profile, .img--size-qr {
         display: none;
+    }
+
+    /*Update the footer*/
+    .link--linkedin-url {
+        display: none;
+    }
+    .img--size-connectIcon {
+        max-height: 50px;
+        float: none;
     }
 }
 
