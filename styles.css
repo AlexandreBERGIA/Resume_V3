@@ -11,7 +11,7 @@ body {
 .div--main-page {
     max-width: 800px;
     background: #f3f3f3;
-    margin: 20px auto;
+    margin: 30px auto;
 }
 .div-style-header {
     padding-top: 15px;
@@ -23,13 +23,14 @@ body {
     padding-bottom: 5px;
     padding-left: 30px;
 }
-.div--column-left {
-    text-align: right;
-    float: left;
+.div--column-two {
+    text-align: left;
+    float: right;
     width:26%;
     padding: 1%;
 }
-.div--column-right {
+.div--column-one {
+    text-align: right;
     float: left;
     width: 70%;
     padding: 1%;
@@ -128,6 +129,22 @@ h4 {
     background: #4978bd;
 }
 
+
+/* Styling for the mobile version */
+@media all and (max-width: 601px) {
+    .div--main-page {
+        margin: 10px auto;
+        min-width: 280px;
+    }
+    .div--column-two, .div--column-one {
+        float: none;
+        width: auto;
+    }
+
+    .img--size-profile {
+        display: none;
+    }
+}
 
 
 /* Styling for the printed version */
