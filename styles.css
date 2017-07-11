@@ -46,6 +46,12 @@ body {
     clear: both;
 }
 
+/* List styling */
+ul.list--style-contact {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 
 /* Text styling */
 p {
@@ -101,7 +107,13 @@ h4 {
     border: 5px solid #f3f3f3;
     max-height: 80px;
     margin-right: 10px;
+}
+.img--style-textinline {
     float: left;
+}
+.img--style-contactIcon {
+    max-width: 15px;
+    margin-right: 5px;
 }
 .img--size-qr {
     margin-top: 20px;
@@ -149,12 +161,12 @@ a, a:visited, a:hover, a:active {
         font-family: "Arial";
     }
 
-    /*Remove the gradients*/
+    /* Remove the gradients */
     .page--gradient-blueRight, .page--gradient-blueLeft {
         background: #f3f3f3;
     }
 
-    /*Update the main page layout*/
+    /* Update the main page layout */
     .div--main-page {
         margin: 10px auto;
         min-width: 280px;
@@ -174,7 +186,7 @@ a, a:visited, a:hover, a:active {
         text-align: center;
     }
 
-    /*Update the titles and dates*/
+    /* Update the titles and dates */
     .text--style-name {
         font-size: 250%;
     }
@@ -187,17 +199,25 @@ a, a:visited, a:hover, a:active {
         font-size: 130%;
     }
 
-    /*Update the profile*/
+    /* Update the contact */
+    ul.list--style-contact img.img--style-contactIcon {
+        max-width: 20px;
+    }
+    ul.list--style-contact span {
+        font-size: 110%;
+    }
+
+    /* Update the profile */
     .text--align-profile {
         display: block;
         white-space: normal;
-        padding: 20px;
+        padding: 15px;
     }
     .img--size-profile, .img--size-qr {
         display: none;
     }
 
-    /*Update the footer*/
+    /* Update the footer */
     .link--linkedin-url {
         display: none;
     }
