@@ -99,13 +99,13 @@ h4 {
 /* Images */
 .img--size-profile {
     border: 5px solid #f3f3f3;
-    max-height: 100px;
+    max-height: 80px;
     margin-right: 10px;
     float: left;
 }
 .img--size-qr {
     margin-top: 20px;
-    max-height: 100px;
+    max-height: 80px;
 }
 .img--size-connectIcon {
     max-height: 15px;
@@ -218,9 +218,5 @@ a, a:visited, a:hover, a:active {
     .div--main-page {
         margin: 0px;
         background: #fff;
-    }
-
-    .div-style-footer {
-        display: none;
     }
 }
