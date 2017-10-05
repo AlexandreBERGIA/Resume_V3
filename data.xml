@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resume_V3>
+    <main>
+        <titles>
+            <title language="ENG">Alexandre Bergia - Resume</title>
+            <title language="FRA">Alexandre Bergia - CV</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <cityCountry>Medellin, Colombia</cityCountry>
+                <birtNationality>33 years old, French</birtNationality>
+                <mobilePhone>+57 (318) 378-8218</mobilePhone>
+                <email>contact@abergia.com</email>
+                <headline language="ENG">Computer Science and Information Technologies Expert, Real Time and Embedded Systems</headline>
+            </entry>
+        </entries>
+    </main>
+
+    <experiences>
+        <titles>
+            <title language="ENG">Professional Experiences</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <startDate>2017-06-01</startDate>
+                <endDate>Present</endDate>
+                <position>Product Owner</position>
+                <companyName>Sproutloud Media Networks</companyName>
+                <companyLogo></companyLogo>
+                <location>Medellin, Colombia</location>
+                <description>• Product: Define, Refine, Plan the release and Prepare the User Documentation of the new Features with the Stakeholders.
+    • Backlog: Define, Refine, Prioritise and Maintain the stories with the Teams</description>
+            </entry>
+            <entry language="ENG">
+                <startDate>2015-11-01</startDate>
+                <endDate>2017-05-31</endDate>
+                <position>IT Team Lead / Senior Software Developer</position>
+                <companyName>Sproutloud Media Networks</companyName>
+                <companyLogo></companyLogo>
+                <location>Medellin, Colombia</location>
+                <description>• PHP, jQuery, SQL: Development of new features and maintenance of the marketing management platform
+    • UML: Architecture design of new features
+    • Agile: Scrum implementation</description>
+            </entry>
+            <entry language="ENG">
+                <startDate>2014-05-01</startDate>
+                <endDate>2015-11-30</endDate>
+                <position>Software Developer</position>
+                <companyName>Sproutloud Media Networks</companyName>
+                <companyLogo></companyLogo>
+                <location>Medellin, Colombia</location>
+                <description>• PHP, jQuery, SQL: Development of new features and maintenance of the marketing management platform
+    • UML: Architecture design of new features
+    • Agile: Scrum implementation</description>
+            </entry>
+            <entry language="ENG">
+                <startDate>2012-02-01</startDate>
+                <endDate>2013-07-31</endDate>
+                <position>Java Software Engineer</position>
+                <companyName>Bull</companyName>
+                <companyLogo></companyLogo>
+                <location>Toulon, France</location>
+                <description>• Java: Framework development to facilitate the creation for synchronization application based on MantisBT
+    • Java: Implementation of the first two synchronisation applications for Bull-DCNS projects based on the Framework
+    • Colleagues formation on the Framework
+    • Weapon system interfaces Development for Submarines (DCNS project)</description>
+            </entry>
+
+            <entry language="ENG">
+                <startDate>2009-08-01</startDate>
+                <endDate>2011-08-31</endDate>
+                <position>Production Process Optimization</position>
+                <companyName>Lyon Casting Consulting</companyName>
+                <companyLogo></companyLogo>
+                <location>Lyon, France</location>
+                <description>• VB.Net + MySQL: Customer management application development with VB.Net and MySQL Database installation
+    • Formation instruction support writing and users Formation
+    • Three VoIP lines installation with IPBX configuration
+    • Production process optimisation
+    • Communication, Advertisement
+    • Customer Relations</description>
+            </entry>
+        </entries>
+    </experiences>
+
+    <knowledge>
+        <titles>
+            <title language="ENG">Knowledge</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <header>Development</header>
+                <description>TDD, Java, Factories, Bash + Script, Junit, ANT, JavaBeans, Birt, SQL, XML, VB.Net (LINQ), C/C++, PHP, HTML, Javascript</description>
+            </entry>
+            <entry language="ENG">
+                <header>Software</header>
+                <description>Git, Eclipse, Mantis, Jenkins, Mac (Mail, iCal, Numbers, Pages …) Microsoft Office + Outlook (2003/2007/2010), Project, OpenOffice, LibreOffice</description>
+            </entry>
+            <entry language="ENG">
+                <header>DBMS</header>
+                <description>Oracle, Access, MySQL</description>
+            </entry>
+            <entry language="ENG">
+                <header>OS</header>
+                <description>Linux (Ubuntu, CentOS), MAC OS X/OS X Server, Windows 2000/XP/Vista/7/8, Windows 2000/2003 Server</description>
+            </entry>
+            <entry language="ENG">
+                <header>Network</header>
+                <description>VoIP, Installation and Administration (AD, LDAP, DNS, DHCP) Windows and Linux, Routing, Wireless</description>
+            </entry>
+        </entries>
+    </knowledge>
+
+
+    <references>
+        <titles>
+            <title language="ENG">References</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <responsible>Arnaud Delarue</responsible>
+                <companyName>Manager - Bull</companyName>
+                <email>arnaud.delarue@bull.net</email>
+            </entry>
+            <entry language="ENG">
+                <responsible>Catherine Lose</responsible>
+                <companyName>LCC</companyName>
+                <phone>+33 6 88 57 86 55</phone>
+            </entry>
+            <entry language="ENG">
+                <responsible>Kevin Ryan</responsible>
+                <companyName>IT Support Manager - SAP</companyName>
+                <email>kevin.ryan@sap.com</email>
+            </entry>
+        </entries>
+    </references>
+
+    <trainings>
+        <titles>
+            <title language="ENG">Trainings</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <startDate>2016-10-01</startDate>
+                <name>SAFe Practitioner (SP)</name>
+                <location>Medellin, Colombia</location>
+                <description></description>
+            </entry>
+            <entry language="ENG">
+                <startDate>2011-09-01</startDate>
+                <endDate>2013-06-30</endDate>
+                <name>RNCP Degree Level 1</name>
+                <location>Ingésup, Aix-en-Provence, France</location>
+                <description>Real Time and Embedded Systems Computer Science and Information Technologies Expert</description>
+            </entry>
+            <entry language="ENG">
+                <startDate>2005-09-01</startDate>
+                <endDate>2006-06-30</endDate>
+                <name>Baccalauréat +3</name>
+                <location>Lyon, France</location>
+                <description>Network and Computer Communications</description>
+            </entry>
+            <entry language="ENG">
+                <startDate>2003-09-01</startDate>
+                <endDate>2005-06-30</endDate>
+                <name>BTS Informatique de Gestion Network</name>
+                <location>Institution des CHARTREUX, Lyon, France</location>
+                <description>Administration option</description>
+            </entry>
+            <entry language="ENG">
+                <startDate>1999-09-01</startDate>
+                <endDate>2003-06-30</endDate>
+                <name>Baccalauréat STI Génie Électrotechnique</name>
+                <location>École La MACHE, Lyon, France</location>
+                <description>with Great Honour</description>
+            </entry>
+        </entries>
+    </trainings>
+
+    <organizations>
+        <titles>
+            <title language="ENG">Organizations</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <position>President</position>
+                <name>BDE Ingésup Aix</name>
+                <startDate>2011</startDate>
+                <endDate>2013</endDate>
+                <description>The School Students Association</description>
+            </entry>
+        </entries>
+    </organizations>
+
+    <languages>
+        <titles>
+            <title language="ENG">Languages</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <name>French</name>
+                <level>Mother Thongue</level>
+            </entry>
+            <entry language="ENG">
+                <name>English</name>
+                <level>Fluent</level>
+            </entry>
+            <entry language="ENG">
+                <name>Spanish</name>
+                <level>Fluent</level>
+            </entry>
+        </entries>
+    </languages>
+
+    <rewards>
+        <titles>
+            <title language="ENG">Rewards</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <startDate>2014</startDate>
+                <name>Rookie of the Year 2014</name>
+                <companyName>Sproutloud</companyName>
+            </entry>
+        </entries>
+    </rewards>
+
+    <other>
+        <titles>
+            <title language="ENG">Other</title>
+        </titles>
+        <entries>
+            <entry language="ENG">
+                <description>Airsoft, Snowboard, Horse riding, Saxophone</description>
+            </entry>
+        </entries>
+    </other>
+</Resume_V3>
