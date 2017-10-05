@@ -1,239 +1,244 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Alexandre Bergia - Resume</title>
+    <title>Alexandre Bergia</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Import the external libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js-external/jquery-dateFormat.min.js"></script>
+    <script src="js-external/underscore.min.js"></script>
+
+    <!-- Import the Resume libraries -->
+    <script src="js/filter.js"></script>
+    <script src="js/selector.js"></script>
+    <script src="js/resume.js"></script>
     <meta charset="utf-8"/>
 </head>
-<body>
-<div class="div--main-page">
+<body onload="initResume()"">
+<script type="text/javascript">
+    function initResume() {
+        var filter    = new Filter();
+        var selector  = new Selector();
+        var resume    = new Resume_v3(filter, selector);
+
+        resume.loadResume();
+    };
+</script>
+
+
+<!-- Template for the headline and the address -->
+<script type="text/html" id="app--contact-template">
+    <div class="div--column-two div--content-contact">
+        <ul class="list--style-contact">
+            <li>
+                <img src="img/icon-location.svg" class="img--style-contactIcon img--style-textinline">
+                <span><%= cityCountry %></span>
+            </li>
+            <li>
+                <img src="img/icon-rss.svg" class="img--style-contactIcon img--style-textinline">
+                <span><%= birtNationality %></span>
+            </li>
+            <li>
+                <img src="img/icon-phone.svg" class="img--style-contactIcon img--style-textinline">
+                <span><%= mobilePhone %></span>
+            </li>
+            <li>
+                <img src="img/icon-envelope.svg" class="img--style-contactIcon img--style-textinline">
+                <span><a href="mailto:<%= email %>"></a><%= email %></span>
+            </li>
+        </ul>
+    </div>
+    <div class="div--column-one div--content-profile page--gradient-blueLeft">
+        <div class="div--align-noWrap">
+            <img class="img--size-profile img--style-textinline" src="img/profile.jpg">
+            <div class="text--align-profile"><h2><%= headline %></h2></div>
+        </div>
+    </div>
+    <div class="div--line-force"></div>
+</script>
+
+
+<!-- Templates for the experiences -->
+<script type="text/html" id="app--experience-titleTemplate">
+    <h3 class="text--style-title"><%= title %></h3>
+</script>
+<script type="text/html" id="app--experience-entryTemplate">
+    <h4 class="text--style-date">
+        <span><%= startDate %></span> — <span><%= endDate %></span>
+    </h4>
+    <span class="text--highlight-high"><%= position %></span>
+    <span class="text--separator-berore"><%= companyName %></span>
+    <span class="text--highlight-low text--separator-berore"><%= location %></span>
+    <span class="text--display-oneLine"><%= description %></span>
+</script>
+
+
+<!-- Templates for the knowledge -->
+<script type="text/html" id="app--knowledge-titleTemplate">
+    <h3 class="text--style-title"><%= title %></h3>
+</script>
+<script type="text/html" id="app--knowledge-entryTemplate">
+    <div>
+        <span class="text--highlight-high"><%= header %></span>:
+        <span><%= description %></span>
+    </div>
+</script>
+
+
+<!-- Templates for the references -->
+<script type="text/html" id="app--references-titleTemplate">
+    <h3 class="text--style-title"><%= title %></h3>
+</script>
+<script type="text/html" id="app--references-entryTemplate">
+    <div>
+        <span><%= responsible %></span>
+        <% if (typeof companyName !== 'undefined') { %>
+            <span class="text--highlight-high text--separator-berore"><%= companyName %></span>
+        <% } %>
+        <% if (typeof phone !== 'undefined') { %>
+            <span class="text--separator-berore"><%= phone %></span>
+        <% } %>
+        <% if (typeof email !== 'undefined') { %>
+            <span class="text--separator-berore"><%= email %></span>
+        <% } %>
+    </div>
+</script>
+
+
+<!-- Templates for the trainings -->
+<script type="text/html" id="app--trainings-titleTemplate">
+    <h3 class="text--style-title"><%= title %></h3>
+</script>
+<script type="text/html" id="app--trainings-entryTemplate">
+    <div>
+        <h4 class="text--style-date text--display-oneLine">
+            <span><%= startDate %></span>
+            <% if (typeof endDate !== 'undefined') { %>
+                <span class="text--separator-berore"><%= endDate %></span>
+            <% } %>
+        </h4>
+        <div class="div--date-content">
+            <% if (typeof name !== 'undefined') { %>
+                <span class="text--highlight-high"><%= name %></span>
+            <% } %>
+            <% if (typeof description !== 'undefined') { %>
+                <span class="text--highlight-low"><%= description %></span>
+            <% } %>
+            <% if (typeof location !== 'undefined') { %>
+                <span class="text--highlight-low"><%= location %></span>
+            <% } %>
+        </div>
+    </div>
+</script>
+
+
+<!-- Templates for the organizations -->
+<script type="text/html" id="app--organizations-titleTemplate">
+    <h3 class="text--style-title"><%= title %></h3>
+</script>
+<script type="text/html" id="app--organizations-entryTemplate">
+    <div>
+        <h4 class="text--style-date">
+            <span><%= startDate %></span>
+            <span class="text--separator-berore"><%= endDate %></span>
+        </h4>
+        <span class="text--highlight-high"><%= position %></span>
+        <span class="text--separator-berore"><%= name %></span>
+        <span class="text--highlight-low"><%= description %></span>
+    </div>
+</script>
+
+
+<!-- Templates for the languages -->
+<script type="text/html" id="app--languages-titleTemplate">
+    <h3 class="text--style-title"><%= title %></h3>
+</script>
+<script type="text/html" id="app--languages-entryTemplate">
+    <div>
+        <span class="text--highlight-high"><%= name %></span>
+        <span class="text--separator-berore"><%= level %></span>
+    </div>
+</script>
+
+
+<!-- Templates for the rewards -->
+<script type="text/html" id="app--rewards-titleTemplate">
+    <h3 class="text--style-title"><%= title %></h3>
+</script>
+<script type="text/html" id="app--rewards-entryTemplate">
+    <div>
+        <h4 class="text--style-date">
+            <span><%= startDate %></span>
+        </h4>
+        <span class="text--highlight-high"><%= name %></span>
+        <span class="text--separator-berore"><%= companyName %></span>
+    </div>
+</script>
+
+
+<!-- Templates for the other -->
+<script type="text/html" id="app--other-titleTemplate">
+    <h3 class="text--style-title"><%= title %></h3>
+</script>
+<script type="text/html" id="app--other-entryTemplate">
+    <div>
+        <span><%= description %></span>
+    </div>
+</script>
+
+<div class="div--main-page app--main-page">
     <div class="div-style-header page--background-blue">
         <h1 class="text--style-title text--margin-title">Alexandre Bergia</h1>
     </div>
 
 
-    <div>
-        <div class="div--column-two div--content-contact">
-            <ul class="list--style-contact">
-                <li>
-                    <img src="sources/icon-location.svg" class="img--style-contactIcon img--style-textinline">
-                    <span>Medellin, Colombia</span>
-                </li>
-                <li>
-                    <img src="sources/icon-rss.svg" class="img--style-contactIcon img--style-textinline">
-                    <span>33 years old, French</span>
-                </li>
-                <li>
-                    <img src="sources/icon-phone.svg" class="img--style-contactIcon img--style-textinline">
-                    <span>+57 (318) 378-8218</span>
-                </li>
-                <li>
-                    <img src="sources/icon-envelope.svg" class="img--style-contactIcon img--style-textinline">
-                    <span><a href="mailto:contact@abergia.com">contact@abergia.com</a></span>
-                </li>
-            </ul>
-        </div>
-        <div class="div--column-one div--content-profile page--gradient-blueLeft">
-            <div class="div--align-noWrap">
-                <img class="img--size-profile img--style-textinline" src="sources/profile.jpg">
-                <div class="text--align-profile"><h2>Computer Science and Information Technologies Expert, Real Time and Embedded Systems</h2></div>
-            </div>
-        </div>
-        <div class="div--line-force"></div>
-    </div>
-
+    <div class="app--contact-container"></div>
 
     <div>
         <div class="div--column-one">
+            <div class="app--experience-titleContainer"></div>
+            <div class="app--experience-entryContainer"></div>
+
             <div>
-                <h3 class="text--style-title">Professional Experiences</h3>
-                <div class="div-title-content">
-                    <h4 class="text--style-date">2016 - To date</h4>
-                    <div class="div--date-content">
-                        <p class="text--highlight-high">Team Leader / Senior Software Developer</p>
-                        <p class="text--separator-berore">SproutLoud</p>
-                        <p class="text--highlight-low text--separator-berore">Marketing Solutions Provider</p>
-                        <p class="text--highlight-low text--separator-berore">Medellin, Colombia</p>
-                        <p class="text--display-oneLine">Team management (Dev, UX, DB, QA), Stories writing and prioritizing, Sprints preparation and planification • PHP, jQuery, SQL: Development of new features and maintenance of the marketing management platform • UML: Architecture design of new features • Agile environment using Scrum (SAFe)</p>
-                    </div>
-
-                    <h4 class="text--style-date">2014 - 2015</h4>
-                    <div class="div--date-content">
-                        <p class="text--highlight-high">Developer</p>
-                        <p class="text--separator-berore">Sproutloud</p>
-                        <p class="text--highlight-low text--separator-berore">Marketing Solutions Provider</p>
-                        <p class="text--highlight-low text--separator-berore">Medellin, Colombia</p>
-                        <p class="text--display-oneLine">PHP, jQuery, SQL: Development of new features and maintenance of the marketing management platform • UML: Architecture design of new features • Agile environment using Scrum</p>
-                    </div>
-
-                    <h4 class="text--style-date">2011-2013</h4>
-                    <div class="div--date-content">
-                        <p class="text--highlight-high">Developer</p>
-                        <p class="text--separator-berore">Bull</p>
-                        <p class="text--highlight-low text--separator-berore">Professional Computer Solutions Provider</p>
-                        <p class="text--highlight-low text--separator-berore">Toulon, France</p>
-                        <p class="text--display-oneLine">Java: Framework development to facilitate the creation for synchronization application based on TF tool MantisBT • Java: Implementation of the first two synchronisation applications for Bull-DCNS projects based on the Framework • Colleagues training on the Framework • Weapon system interfaces Development for Submarines (DCNS project)</p>
-                    </div>
-
-                    <h4 class="text--style-date">2009-2011</h4>
-                    <div class="div--date-content">
-                        <p class="text--highlight-high">Developer</p>
-                        <p class="text--separator-berore">LCC</p>
-                        <p class="text--highlight-low text--separator-berore">Precious Metals Casting</p>
-                        <p class="text--highlight-low text--separator-berore">Lyon, France</p>
-                        <p class="text--display-oneLine">VB.Net + MySQL: Customer management application development with VB.Net and MySQL Database installation • Training instruction support writing and users Training • Three VoIP lines installation with IPBX configuration • Production process optimisation • Communication, Advertisement • Customer Relations</p>
-                    </div>
-
-                    <h4 class="text--style-date">2007-2008</h4>
-                    <div class="div--date-content">
-                        <p class="text--highlight-high">First Level Technical Support</p>
-                        <p class="text--separator-berore">SAP</p>
-                        <p class="text--highlight-low text--separator-berore">ITSC</p>
-                        <p class="text--highlight-low text--separator-berore">Dublin, Irlande</p>
-                            <p class="text--display-oneLine">Microsoft Windows XP/Vista • Suite Office (Outlook, Excel, Word …), VPN, RSA SecurID, Ipass • French Internet Provider Referent</p>
-                    </div>
-                </div>
+                <div class="app--knowledge-titleContainer"></div>
+                <div class="app--knowledge-entryContainer"></div>
             </div>
 
             <div>
-                <h3 class="text--style-title">Knowledge</h3>
-                <div class="div--title-content">
-                    <div>
-                        <p class="text--highlight-high">Development:</p>
-                        <p>TDD, Java, Factories, Bash + Script, Junit, ANT, JavaBeans, Birt, SQL, XML, VB.Net (LINQ), C/C++, PHP, HTML, Javascript</p>
-                    </div>
-
-                    <div>
-                        <p class="text--highlight-high">Software:</p>
-                        <p>Git, Eclipse, Mantis, Jenkins, Mac (Mail, iCal, Numbers, Pages …) Microsoft Office + Outlook (2003/2007/2010), Project, OpenOffice, LibreOffice</p>
-                    </div>
-
-                    <div>
-                        <p class="text--highlight-high">DBMS:</p>
-                        <p>Oracle, Access, MySQL</p>
-                    </div>
-
-                    <div>
-                        <p class="text--highlight-high">OS:</p>
-                        <p>Linux (Ubuntu, CentOS), MAC OS X/OS X Server, Windows 2000/XP/Vista/7/8, Windows 2000/2003 Server</p>
-                    </div>
-
-                    <div>
-                        <p class="text--highlight-high">Network:</p>
-                        <p>VoIP, Installation and Administration (AD, LDAP, DNS, DHCP) Windows and Linux, Routing, Wireless</p>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="text--style-title">References</h3>
-                <div class="div--title-content">
-                    <div>
-                        <p>Arnaud Delarue</p>
-                        <p class="text--highlight-high text--separator-berore">Manager - Bull</p>
-                        <p class="text--separator-berore">arnaud.delarue@bull.net</p>
-                    </div>
-
-                    <div>
-                        <p>Catherine Lose</p>
-                        <p class="text--highlight-high text--separator-berore">LCC</p>
-                        <p class="text--separator-berore">+33 6 88 57 86 55</p>
-                    </div>
-
-                    <div>
-                        <p>Kevin Ryan</p>
-                        <p class="text--highlight-high text--separator-berore">IT Support Manager - SAP</p>
-                        <p class="text--separator-berore">kevin.ryan@sap.com</p>
-                    </div>
-                </div>
+                <h3 class="text--style-title app--references-titleContainer"></h3>
+                <div class="app--references-entryContainer"></div>
             </div>
         </div>
 
 
         <div class="div--column-two page--gradient-blueRight">
             <div>
-                <h3 class="text--style-title">Trainings</h3>
-                <div class="div--title-content">
-                    <div>
-                        <h4 class="text--style-date text--display-oneLine">2016</h4>
-                        <div class="div--date-content">
-                            <p class="text--highlight-high">SAFe Practitioner (SP)</p>
-                            <p class="text--highlight-low">Medellin, Colombia</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 class="text--style-date">2011-2013</h4>
-                        <div class="div--date-content">
-                            <p class="text--highlight-high">RNCP Degree Level 1</p>
-                            <p>Real Time and Embedded Systems Computer Science and Information Technologies Expert</p>
-                            <p class="text--highlight-low">Ingésup, Aix-en-Provence, France</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 class="text--style-date">2005-2006</h4>
-                        <div class="div--date-content">
-                            <p class="text--highlight-high">Baccalauréat +3</p>
-                            <p>Network and Computer Communications</p>
-                            <p class="text--highlight-low">Lyon, France</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 class="text--style-date">2003-2005</h4>
-                        <div class="div--date-content">
-                            <p class="text--highlight-high">BTS Informatique de Gestion Network</p>
-                            <p>Administration option</p>
-                            <p class="text--highlight-low">Institution des CHARTREUX, Lyon, France</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 class="text--style-date">1999-2003</h4>
-                        <div class="div--date-content">
-                            <p class="text--highlight-high">Baccalauréat STI Génie Électrotechnique</p>
-                            <p>with Great Honour</p>
-                            <p class="text--highlight-low">École La MACHE, Lyon, France</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="app--trainings-titleContainer"></div>
+                <div class="app--trainings-entryContainer"></div>
             </div>
 
             <div>
-                <h3 class="text--style-title">Organization</h3>
-                <div class="div--title-content">
-                    <p class="text--highlight-high">President</p>
-                    <p> - BDE Ingésup Aix - 2011-2013</p>
-                    <p class="text--highlight-low">The School Students Association</p>
-                </div>
+                <div class="app--organizations-titleContainer"></div>
+                <div class="app--organizations-entryContainer"></div>
             </div>
 
             <div>
-                <h3 class="text--style-title">Languages</h3>
-                <div class="div--title-content">
-                    <div><p class="text--highlight-high">French</p><p>: Mother Thongue</p></div>
-                    <div><p class="text--highlight-high">English</p><p>: Fluent</p></div>
-                    <div><p class="text--highlight-high">Spanish</p><p>: Fluent</p></div>
-                </div>
+                <div class="app--languages-titleContainer"></div>
+                <div class="app--languages-entryContainer"></div>
             </div>
 
             <div>
-                <h3 class="text--style-title">Rewards & Honors</h3>
-                <div class="div--title-content">
-                    <p>Rookie of the Year 2014 - </p><p class="text--highlight-high">Sproutloud</p>
-                </div>
+                <div class="app--rewards-titleContainer"></div>
+                <div class="app--rewards-entryContainer"></div>
             </div>
 
             <div>
-                <h3 class="text--style-title">Other</h3>
-                <div class="div--title-content">
-                    <p>Airsoft, Snowboard, Horse riding, Saxophone</p>
-                </div>
+                <div class="app--other-titleContainer"></div>
+                <div class="app--other-entryContainer"></div>
             </div>
 
             <div class="text--align-center">
-                <img class="img--size-qr" src="sources/CV_EN.png">
+                <img class="img--size-qr" src="img/CV_EN.png">
             </div>
         </div>
 
@@ -243,7 +248,7 @@
     <div class="div-style-footer page--background-blue">
         <div class="div--align-noWrap">
             <a href="http://www.linkedin.com/in/alexandrebergia">
-                <img src="sources/LinkedIn-Logo.png" class="img--size-connectIcon">
+                <img src="img/LinkedIn-Logo.png" class="img--size-connectIcon">
                 <span class="link--linkedin-url">www.linkedin.com/in/alexandrebergia</span>
             </a>
         </div>
