@@ -8,26 +8,58 @@
     <script src="js-external/jquery-dateFormat.min.js"></script>
     <script src="js-external/underscore.min.js"></script>
 
+    <!-- Import the custom libraries -->
+    <script src="js/queryString.js"></script>
+
     <!-- Import the Resume libraries -->
     <script src="js/filter.js"></script>
     <script src="js/selector.js"></script>
     <script src="js/resume.js"></script>
+    <script src="js/menu.js"></script>
     <meta charset="utf-8"/>
 </head>
 <body onload="initResume()"">
 <script type="text/javascript">
-    function initResume() {
-        var filter    = new Filter();
-        var selector  = new Selector();
-        var resume    = new Resume_v3(filter, selector);
+    var resume, urlParameters, menu, filter = {};
 
+    /**
+     * Initialize the Resume on the page
+     */
+    function initResume() {
+        // Get the url parameters first
+        urlParameters = new QueryString(location.hash.substring(1));
+        filter        = new Filter(urlParameters.getAll());
+        var selector  = new Selector();
+
+        // menu          = new Menu(urlParameters, selector);
+        resume        = new Resume_v3(filter, selector);
+        resume.loadResume();
+
+        window.onhashchange = hashChangeHandler;
+    };
+
+    /**
+     * Handler for the Hash Change event
+     */
+    function hashChangeHandler() {
+        urlParameters.update(location.hash.substring(1));
+        filter.setConfig(urlParameters.getAll());
+        //menu.urlParametersChangeEventHandler();
         resume.loadResume();
     };
 </script>
 
+<!-- Templates for the Menu -->
+<script type="text/html" id="app--menu-controlsTemplateContainer">
+    <select class="app--menu-yearSelectControl">
+        <option value="1999">1999</option>
+        <option value="2005">2005</option>
+        <option value="2012">2012</option>
+    </select>
+</script>
 
 <!-- Template for the headline and the address -->
-<script type="text/html" id="app--contact-template">
+<script type="text/html" id="app--contact-entryTemplate">
     <div class="div--column-two div--content-contact">
         <ul class="list--style-contact">
             <li>
@@ -57,7 +89,6 @@
     <div class="div--line-force"></div>
 </script>
 
-
 <!-- Templates for the experiences -->
 <script type="text/html" id="app--experience-titleTemplate">
     <h3 class="text--style-title"><%= title %></h3>
@@ -72,18 +103,16 @@
     <span class="text--display-oneLine"><%= description %></span>
 </script>
 
-
-<!-- Templates for the knowledge -->
-<script type="text/html" id="app--knowledge-titleTemplate">
+<!-- Templates for the languages -->
+<script type="text/html" id="app--languages-titleTemplate">
     <h3 class="text--style-title"><%= title %></h3>
 </script>
-<script type="text/html" id="app--knowledge-entryTemplate">
+<script type="text/html" id="app--languages-entryTemplate">
     <div>
-        <span class="text--highlight-high"><%= header %></span>:
-        <span><%= description %></span>
+        <span class="text--highlight-high"><%= name %></span>
+        <span class="text--separator-berore"><%= level %></span>
     </div>
 </script>
-
 
 <!-- Templates for the references -->
 <script type="text/html" id="app--references-titleTemplate">
@@ -103,7 +132,6 @@
         <% } %>
     </div>
 </script>
-
 
 <!-- Templates for the trainings -->
 <script type="text/html" id="app--trainings-titleTemplate">
@@ -131,7 +159,6 @@
     </div>
 </script>
 
-
 <!-- Templates for the organizations -->
 <script type="text/html" id="app--organizations-titleTemplate">
     <h3 class="text--style-title"><%= title %></h3>
@@ -148,18 +175,15 @@
     </div>
 </script>
 
-
-<!-- Templates for the languages -->
-<script type="text/html" id="app--languages-titleTemplate">
+<!-- Templates for the other -->
+<script type="text/html" id="app--other-titleTemplate">
     <h3 class="text--style-title"><%= title %></h3>
 </script>
-<script type="text/html" id="app--languages-entryTemplate">
+<script type="text/html" id="app--other-entryTemplate">
     <div>
-        <span class="text--highlight-high"><%= name %></span>
-        <span class="text--separator-berore"><%= level %></span>
+        <span><%= description %></span>
     </div>
 </script>
-
 
 <!-- Templates for the rewards -->
 <script type="text/html" id="app--rewards-titleTemplate">
@@ -176,15 +200,15 @@
 </script>
 
 
-<!-- Templates for the other -->
-<script type="text/html" id="app--other-titleTemplate">
-    <h3 class="text--style-title"><%= title %></h3>
-</script>
-<script type="text/html" id="app--other-entryTemplate">
-    <div>
-        <span><%= description %></span>
+<div class="menu--main-container app--menu-container">
+    <div class="menu--controls-container app--menu-controlsContainer">
     </div>
-</script>
+    <div class="menu--handle-container app--menu-handleContainer">
+        <div class="menu--handle-bar menu--bar1-style"></div>
+        <div class="menu--handle-bar menu--bar2-style"></div>
+        <div class="menu--handle-bar menu--bar3-style"></div>
+    </div>
+</div>
 
 <div class="div--main-page app--main-page">
     <div class="div-style-header page--background-blue">
@@ -192,7 +216,7 @@
     </div>
 
 
-    <div class="app--contact-container"></div>
+    <div class="app--contact-entryContainer"></div>
 
     <div>
         <div class="div--column-one">

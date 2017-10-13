@@ -4,9 +4,20 @@
 function Selector() {
     this.mainContainer                = $(".app--main-page");
 
+    this.menu                         = {};
+    this.menu.container               = $(".app--menu-container");
+    this.menu.handleContainer         = $(".app--menu-handleContainer", this.menu.container);
+    this.menu.controlsContainer       = $(".app--menu-controlsContainer", this.menu.container);
+    this.menu.controlsTemplateContainer = $("#app--menu-controlsTemplateContainer");
+    this.menu.controls                = {};
+    this.menu.controls.yearSelect     = function () {
+        return $(".app--menu-yearSelectControl");
+    }
+
     this.contact                      = {};
-    this.contact.container            = $(".app--contact-container", this.mainContainer);
-    this.contact.template             = $("#app--contact-template");
+    this.contact.entryTemplate        = $("#app--contact-entryTemplate");
+    this.contact.entryContainer       = $(".app--contact-entryContainer", this.mainContainer);
+
     this.contact.linkedIn             = $(".app--contact-linkedIn", this.mainContainer);
 
     this.experiences                  = {};

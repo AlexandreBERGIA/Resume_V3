@@ -5,16 +5,19 @@
             <title language="ENG">Alexandre Bergia - Resume</title>
             <title language="FRA">Alexandre Bergia - CV</title>
         </titles>
+    </main>
+
+    <contact>
         <entries>
             <entry language="ENG">
                 <cityCountry>Medellin, Colombia</cityCountry>
                 <birtNationality>33 years old, French</birtNationality>
                 <mobilePhone>+57 (318) 378-8218</mobilePhone>
                 <email>contact@abergia.com</email>
-                <headline language="ENG">Computer Science and Information Technologies Expert, Real Time and Embedded Systems</headline>
+                <headline>Computer Science and Information Technologies Expert, Real Time and Embedded Systems</headline>
             </entry>
         </entries>
-    </main>
+    </contact>
 
     <experiences>
         <titles>
