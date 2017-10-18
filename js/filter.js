@@ -11,7 +11,7 @@ function Filter (config) {
 
     this.setConfig = function(config) {
         this.language = config.language ? config.language : "ENG";
-        this.start    = config.start ? config.start : 1999;
+        this.start    = (config.start && parseInt(config.start)) ? config.start : 1999;
     }
     this.setConfig(config);
 
