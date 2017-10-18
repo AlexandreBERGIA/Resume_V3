@@ -83,6 +83,18 @@
     • Communication, Advertisement
     • Customer Relations</description>
             </entry>
+            <entry language="ENG">
+                <startDate>2008-01-01</startDate>
+                <endDate>2009-01-31</endDate>
+                <position>First Level Support</position>
+                <companyName>SAP</companyName>
+                <companyLogo></companyLogo>
+                <location>Dublin, Ireland</location>
+                <description>• First Level Technical Support
+    • Microsoft Windows XP/Vista
+    • Suite Office (Outlook, Excel, Word …), VPN, RSA SecurID, Ipass
+    • French Internet Provider Referent</description>
+            </entry>
         </entries>
     </experiences>
 
@@ -124,13 +136,16 @@
                 <responsible>Arnaud Delarue</responsible>
                 <companyName>Manager - Bull</companyName>
                 <email>arnaud.delarue@bull.net</email>
+                <startDate>2012-02-01</startDate>
             </entry>
             <entry language="ENG">
                 <responsible>Catherine Lose</responsible>
                 <companyName>LCC</companyName>
                 <phone>+33 6 88 57 86 55</phone>
+                <startDate>2009-08-01</startDate>
             </entry>
             <entry language="ENG">
+                <startDate>2008-01-01</startDate>
                 <responsible>Kevin Ryan</responsible>
                 <companyName>IT Support Manager - SAP</companyName>
                 <email>kevin.ryan@sap.com</email>
