@@ -63,8 +63,14 @@ function Resume_v3(filter, selector) {
         data     = this.filter.filteredToObject(data);
 
         if (this.selector[sectioName] && this.selector[sectioName].titleTemplate) {
-            template = _.template(this.selector[sectioName].titleTemplate.text());
-            this.selector[sectioName].titleContainer.empty().append(template(data.title));
+            // If there are data entries, we show the title, else we hide it
+            if (_.keys(data.entries).length > 0) {
+                template = _.template(this.selector[sectioName].titleTemplate.text());
+                this.selector[sectioName].titleContainer.empty().append(template(data.title)).show();
+            } else {
+                this.selector[sectioName].titleContainer.hide();
+            }
+
         }
 
         if (self.selector[sectioName] && self.selector[sectioName].entryTemplate) {
