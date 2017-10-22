@@ -148,6 +148,7 @@ function Menu (urlParameters, selector) {
         // Decrement the currentPastYears to see further in the past
         this.selector.menu.controls.yearReset.on("click", function() {
             self.setStartYear(self.minStartYear);
+            self.toggleExpand(false);
         });
     }
 
