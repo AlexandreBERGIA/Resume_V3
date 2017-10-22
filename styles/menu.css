@@ -103,3 +103,18 @@
         height: 40px;
     }
 }
+@media print {
+    .menu--main-container {
+        visibility: hidden;
+    }
+
+    ..menu--style-overlay {
+        visibility: hidden;
+    }
+    .menu--style-open .div--resume-content {
+        margin: 30px auto;
+    }
+    .menu--style-open .menu--controls-container {
+        height: 0px;
+    }
+}
