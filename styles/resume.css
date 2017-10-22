@@ -2,9 +2,8 @@ body {
     background: #000;
     font-family: "Arial";
 }
-
 /* Main styling for the page */
-.div--main-page {
+.div--resume-content {
     max-width: 800px;
     background: #f3f3f3;
     margin: 30px auto;
@@ -73,6 +72,9 @@ h4 {
     margin-top: 6px;
     margin-bottom: 0px;
 }
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
 .text--style-title {
     color: #ff794d;
 }
@@ -90,7 +92,6 @@ h4 {
 .text--align-center {
     text-align: center;
 }
-
 
 .text--highlight-high {
     font-weight: bold;
@@ -125,6 +126,12 @@ h4 {
     float: left;
 }
 
+/* Disabling */
+.element--display-disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
 /* Coloring */
 .page--gradient-blueRight {
     background: #f3f3f3;
@@ -148,10 +155,6 @@ h4 {
 }
 .page--background-blue {
     background: #4978bd;
-}
-
-a, a:visited, a:hover, a:active {
-    color: inherit;
 }
 
 /* Styling for the mobile version */

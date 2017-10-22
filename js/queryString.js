@@ -1,4 +1,4 @@
-function QueryString (urlParams) {
+function QueryString () {
     this.urlParams = {};
 
     /**
@@ -10,8 +10,8 @@ function QueryString (urlParams) {
     /**
      * Constructor implementation
      */
-    this.Constructor = function (urlParams) {
-        this.urlParams = this.parse(urlParams);
+    this.Constructor = function () {
+        this.retrieve();
     }
 
     /**
@@ -108,7 +108,21 @@ function QueryString (urlParams) {
     }
 
     /**
+     * Applies the values to the browser
+     */
+    this.apply = function() {
+        // Nothing for now here
+    }
+
+    /**
+     * Retrieves the values from the browser
+     */
+    this.retrieve = function () {
+        // Nothing for now here
+    }
+
+    /**
      * Constructor call
      */
-    this.Constructor(urlParams);
+    this.Constructor();
 };

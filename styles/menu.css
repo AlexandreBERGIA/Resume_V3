@@ -1,0 +1,105 @@
+/* Control box */
+.menu--main-container {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+.menu--controls-container {
+    background: #A4A4A4;
+    width: 100%;
+    overflow-x: hidden;
+    height: 0px;
+    transition: 0.4s;
+    margin-left: auto;
+    text-align: center;
+}
+.menu--style-open .menu--controls-container {
+    height: 150px;
+    transition: 0.4s;
+}
+.menu--content-container {
+    padding-top: 10px;
+}
+/* Menu handle */
+.menu--handle-container {
+    position: relative;
+    left: 10px;
+    background: #A4A4A4;
+    padding: 10px;
+    max-width: 35px;
+    max-height: 37px;
+}
+.menu--handle-bar {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.menu--style-open .menu--bar1-style {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+.menu--style-open .menu--bar2-style {
+    opacity: 0;
+}
+.menu--style-open .menu--bar3-style {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+.menu--style-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    background-color: #000;
+    z-index: 999;
+}
+.menu--style-overlay.menu--style-overlayApplied {
+    height: 100%;
+    opacity: 0.7;
+    transition: opacity 0.4s;
+}
+/* Menu content */
+.menu--controls-container .text--style-title {
+    color: #000;
+    font-size: 1.5em;
+}
+.component--progress-bar {
+    position: relative;
+    top: 16px;
+}
+.menu--progress-year .component--progress-bar{
+    width: 250px;
+    height: 40px;
+}
+.menu--progress-year .component--progress-loaded{
+    width: 100%;
+}
+
+/* Update the button styles */
+.menu--controls-container .component--button-shell {
+    min-width: 20px;
+}
+
+/* Update the resume styling for the menu */
+.div--resume-content {
+    transition: margin-top 0.4s;
+}
+.menu--style-open .div--resume-content {
+    margin-top: 150px;
+    transition: margin-top 0.4s;
+}
+
+
+/* Styling for the mobile version */
+@media screen and (max-width: 601px) {
+    .menu--progress-year .component--progress-bar{
+        width: 200px;
+        height: 40px;
+    }
+}

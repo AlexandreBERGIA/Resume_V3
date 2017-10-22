@@ -6,13 +6,10 @@ function Selector() {
 
     this.menu                         = {};
     this.menu.container               = $(".app--menu-container");
-    this.menu.handleContainer         = $(".app--menu-handleContainer", this.menu.container);
+    this.menu.handleContainer         = $(".app--menu-handleContainer", this.mainContainer);
     this.menu.controlsContainer       = $(".app--menu-controlsContainer", this.menu.container);
     this.menu.controlsTemplateContainer = $("#app--menu-controlsTemplateContainer");
-    this.menu.controls                = {};
-    this.menu.controls.yearSelect     = function () {
-        return $(".app--menu-yearSelectControl");
-    }
+    this.menu.overlay                 = $("#app--menu-overlay");
 
     this.contact                      = {};
     this.contact.entryTemplate        = $("#app--contact-entryTemplate");
