@@ -15,19 +15,6 @@
     transition: opacity 0.4s;
 }
 
-
-/*
-Spin animation for .loading-mask::after
-*/
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
 /*
 The loading throbber is a single spinning element with three
 visible borders and a border-radius of 50%.
@@ -47,6 +34,14 @@ image using the content attribute.
   left: calc(50% - 12px);
   animation: 2s linear 0s normal none infinite running spin;
   filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 @media print {

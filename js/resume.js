@@ -22,9 +22,6 @@ function Resume_v3(filter, selector, overlay) {
     this.loadResume = function (filter) {
         var self = this;
 
-        // Overlay the page until the load is complete
-        this.overlay.toggleLoading(true);
-
         // Request the XML data from the file
         $.ajax({
             type: "GET",
