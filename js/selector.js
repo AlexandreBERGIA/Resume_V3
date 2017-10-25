@@ -9,7 +9,9 @@ function Selector() {
     this.menu.handleContainer         = $(".app--menu-handleContainer", this.mainContainer);
     this.menu.controlsContainer       = $(".app--menu-controlsContainer", this.menu.container);
     this.menu.controlsTemplateContainer = $("#app--menu-controlsTemplateContainer");
-    this.menu.overlay                 = $("#app--menu-overlay");
+
+    this.overlay                      = {};
+    this.overlay.container            = $("#app--overlay-container");
 
     this.contact                      = {};
     this.contact.entryTemplate        = $("#app--contact-entryTemplate");

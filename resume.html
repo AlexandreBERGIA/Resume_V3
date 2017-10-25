@@ -4,6 +4,7 @@
     <title>Alexandre Bergia</title>
     <link rel="stylesheet" href="styles/resume.css">
     <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/overlay.css">
     <link rel="stylesheet" href="styles/components/progress.css">
     <link rel="stylesheet" href="styles/components/button.css">
     <!-- Import the external libraries -->
@@ -16,6 +17,7 @@
     <script src="js/queryStringResume.js"></script>
 
     <!-- Import the Resume libraries -->
+    <script src="js/overlay.js"></script>
     <script src="js/filter.js"></script>
     <script src="js/selector.js"></script>
     <script src="js/resume.js"></script>
@@ -34,9 +36,10 @@
         urlParameters = new QueryStringResume();
         filter        = new Filter(urlParameters.getAll());
         var selector  = new Selector();
+        var overlay   = new Overlay(selector);
 
-        menu          = new Menu(urlParameters, selector);
-        resume        = new Resume_v3(filter, selector);
+        menu          = new Menu(urlParameters, selector, overlay);
+        resume        = new Resume_v3(filter, selector, overlay);
         resume.loadResume();
 
         window.onhashchange = hashChangeHandler;
@@ -49,7 +52,7 @@
         urlParameters.retrieve();
         filter.setConfig(urlParameters.getAll());
         menu.urlParametersChangeEventHandler();
-        resume.loadResume();
+        resume.writeResumeOnPage();
     };
 </script>
 
@@ -223,7 +226,9 @@
     </div>
 
     <div class="div--resume-content">
-        <div id="app--menu-overlay" class="menu--style-overlay"></div>
+        <div id="app--overlay-container" class="overlay--style-container">
+            <div class="overlay--style-loadingIcon"></div>
+        </div>
 
         <div class="div-style-header page--background-blue">
             <h1 class="text--style-title text--margin-title">Alexandre Bergia</h1>

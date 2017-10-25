@@ -6,11 +6,14 @@
  * @param {Selector} selector
  *    The Selector object to reffer to the enties we are going to write on the
  *    page
+ * @param {Overlay} overlay
+ *    The page overlay
  */
-function Resume_v3(filter, selector) {
+function Resume_v3(filter, selector, overlay) {
     //Declare the xml object
     this.filter     = filter;
-    this.selector   = selector
+    this.selector   = selector;
+    this.overlay    = overlay;
     this.$xml       = null;
 
     /**
@@ -18,6 +21,9 @@ function Resume_v3(filter, selector) {
      */
     this.loadResume = function (filter) {
         var self = this;
+
+        // Overlay the page until the load is complete
+        this.overlay.toggleLoading(true);
 
         // Request the XML data from the file
         $.ajax({
@@ -27,6 +33,7 @@ function Resume_v3(filter, selector) {
             success: function (xml) {
                 self.$xml   = $(xml);
                 self.writeResumeOnPage();
+                self.overlay.toggleLoading(false);
             }
         });
     };

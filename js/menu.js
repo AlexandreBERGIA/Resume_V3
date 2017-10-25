@@ -6,16 +6,18 @@
  * @param {Selector} selector
  *    The Selector object to reffer to the enties we are going to write on the
  *    page
+ * @param {Overlay} overlay
+ *    The page overlay
  */
-function Menu (urlParameters, selector) {
+function Menu (urlParameters, selector, overlay) {
     var self                      = this;
     this.timeoutAutoCloseTime     = 500;
     this.timeoutAutoClose         = {};
     this.selector                 = selector;
     this.urlParameters            = urlParameters;
+    this.overlay                  = overlay;
     this.classes                  = {};
     this.classes.handleToggle     = "menu--style-open";
-    this.classes.overlay          = "menu--style-overlayApplied";
     this.minStartYear             = 2003;
     this.maxStartYear             = (new Date()).getFullYear();
     this.startYear                = this.minStartYear;
@@ -60,7 +62,7 @@ function Menu (urlParameters, selector) {
             toggle = !this.selector.mainContainer.hasClass(this.classes.handleToggle);
         }
         this.selector.mainContainer.toggleClass(this.classes.handleToggle, toggle);
-        this.selector.menu.overlay.toggleClass(this.classes.overlay, toggle);
+        this.overlay.toggle(toggle);
     };
 
     /**
@@ -104,7 +106,7 @@ function Menu (urlParameters, selector) {
         this.selector.menu.handleContainer.on('click', function() {
             self.toggleExpand();
         });
-        this.selector.menu.overlay.on('click', function() {
+        this.selector.overlay.container.on('click', function() {
             self.toggleExpand(false);
         });
 
