@@ -159,6 +159,17 @@ a, a:visited, a:hover, a:active {
 
 /* Styling for the mobile version */
 @media screen and (max-width: 601px) {
+    h1 {
+        font-size: 220%;
+    }
+    h3 {
+        font-size: 200%;
+        padding-top: 50px;
+    }
+    h3:first-child {
+        padding-top: 5px;
+    }
+
     body {
         background: #000;
         font-family: "Arial";
@@ -195,7 +206,6 @@ a, a:visited, a:hover, a:active {
     }
     .text--style-title {
         text-align: center;
-        font-size: 200%;
         margin-top: 20px;
     }
     .text--style-date {
