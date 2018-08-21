@@ -10,9 +10,9 @@
     <contact>
         <entries>
             <entry language="ENG">
-                <cityCountry>Medellin, Colombia</cityCountry>
+                <cityCountry>Weston, FL, USA</cityCountry>
                 <birtNationality>33 years old, French</birtNationality>
-                <mobilePhone>+57 (318) 378-8218</mobilePhone>
+                <mobilePhone>+1 (954) 505-1463</mobilePhone>
                 <email>contact@abergia.com</email>
                 <headline>Computer Science and Information Technologies Expert, Real Time and Embedded Systems</headline>
             </entry>
@@ -25,8 +25,18 @@
         </titles>
         <entries>
             <entry language="ENG">
-                <startDate>2017-06-01</startDate>
+                <startDate>2017-12-15</startDate>
                 <endDate>Present</endDate>
+                <position>Product Owner</position>
+                <companyName>Sproutloud Media Networks</companyName>
+                <companyLogo></companyLogo>
+                <location>Davie, FL, USA</location>
+                <description>• Product: Define, Refine, Plan the release and Prepare the User Documentation of the new Features with the Stakeholders.
+    • Backlog: Define, Refine, Prioritise and Maintain the stories with the Teams</description>
+            </entry>
+            <entry language="ENG">
+                <startDate>2017-06-01</startDate>
+                <endDate>2017-12-14</endDate>
                 <position>Product Owner</position>
                 <companyName>Sproutloud Media Networks</companyName>
                 <companyLogo></companyLogo>
@@ -160,8 +170,16 @@
         <entries>
             <entry language="ENG">
                 <startDate>2016-10-01</startDate>
-                <name>SAFe Practitioner (SP)</name>
+                <endDate>2017-10-01</endDate>
+                <name>SAFe 4 Practitioner</name>
                 <location>Medellin, Colombia</location>
+                <description></description>
+            </entry>
+            <entry language="ENG">
+                <startDate>2018-08-01</startDate>
+                <endDate>2019-08-01</endDate>
+                <name>SAFe 4 Product Owner/Product Manager</name>
+                <location>Miami, USA</location>
                 <description></description>
             </entry>
             <entry language="ENG">
@@ -249,7 +267,7 @@
         </titles>
         <entries>
             <entry language="ENG">
-                <description>Airsoft, Snowboard, Horse riding, Saxophone</description>
+                <description>Airsoft, Snowboard, Horse riding</description>
             </entry>
         </entries>
     </other>
